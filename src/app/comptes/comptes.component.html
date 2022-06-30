@@ -1,0 +1,41 @@
+<button class="alert alert-primary" (click)="openNew()" data-bs-target="addContactModal">Nouveau compte</button>
+<a class="alert alert-dismissable" href="#">retour accueil</a>
+
+<div class="container-fluid">
+    <em>LA LISTE DES COMPTES</em>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Numero Compte</th>
+                <th scope="col">Solde Compte</th>
+                <th scope="col">Date Compte</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let compte of comptes">
+            <tr>
+                <th scope="row">{{compte.id}}</th>
+                <td>{{compte.numeroCompte}}</td>
+                <td>{{compte.solde}}</td>
+                <td>{{compte.dateCompte}}</td>
+                <td>
+                    <span style="cursor: pointer" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                  <mat-icon>more_vert</mat-icon>
+                  </span>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item (click)="ModifierCompte(compte)">
+                      <mat-icon>edit</mat-icon>
+                      <span>Modifier</span>
+                  </button>
+                        <button mat-menu-item (click)="deleteCompte(compte)">
+                      <mat-icon>delete</mat-icon>
+                      <span>Supprimer</span>
+                  </button>
+
+                    </mat-menu>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

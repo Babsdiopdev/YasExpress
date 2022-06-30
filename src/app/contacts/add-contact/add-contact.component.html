@@ -1,0 +1,63 @@
+<section id="container" class="row">
+    <form #addForm="ngForm" (ngSubmit)="onAddContact(addForm)">
+        <div id="head" class="col-12 m-0 mb-3 p-0">
+            <legend>Nouveau contact</legend>
+            <em class="pi pi-times" mat-dialog-close></em>
+        </div>
+        <div class="row m-0 mt-4">
+            <div class="col-md-6 col-sm-12">
+                <label class="col-12 p-0" for="nom">Nom</label>
+                <input class="col-12" type="text" ngModel name="nom" placeholder="Nom" id="nom" />
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <label class="col-12 p-0" for="prenom">Prénom</label>
+                <input class="col-12" type="text" ngModel name="prenom" placeholder="Prénom" pInputText />
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <label class="col-12 p-0" for="civilité">Civilité</label>
+                <input class="col-12" type="text" ngModel name="civilite" placeholder="civilité" pInputText />
+                <!--
+                <select aria-label="types entrepots" ngModel name="civilite" class="col-12" value="types entrepots">
+              <option value=""></option>
+             <option value="">Célibataire</option>
+             <option value="">Marié</option>
+           </select>
+           -->
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <label class="col-12 p-0" for="telephone">Téléphone</label>
+                <input class="col-12" type="number" ngModel name="telephone" placeholder="téléphone" pInputText />
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <label class="col-12 p-0" for="mobile">Mobile</label>
+                <input class="col-12" type="number" ngModel name="mobile" placeholder="Mobile" pInputText />
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <label class="col-12 p-0" for="adresse">Adresse contact</label>
+                <input class="col-12" type="text" ngModel name="adresse" placeholder="Adresse contact" pInputText />
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <label class="col-12 p-0" for="email">Email</label>
+                <input class="col-12" type="text" ngModel name="email" placeholder="Email" pInputText />
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <label class="col-12 p-0" for="site">Site</label>
+                <input class="col-12" type="text" ngModel name="site" placeholder="Site" pInputText />
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <label class="col-12 p-0" for="type">Type</label>
+                <input class="col-12" type="text" ngModel name="type" placeholder="Type" pInputText />
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <label class="col-12 p-0" for="fonction">Fonction</label>
+                <input class="col-12" type="text" ngModel name="fonction" placeholder="Fonction" pInputText />
+            </div>
+        </div>
+        <div>
+            <div class="pull-right mt-4">
+                <button type="button" id="addContact" mat-button mat-dialog-close class="alert alert-danger ml-3">Annuler</button>
+                <button [disabled]="addForm.invalid" type="submit" class="alert alert-primary">Enrigistrer</button>
+            </div>
+        </div>
+    </form>
+</section>

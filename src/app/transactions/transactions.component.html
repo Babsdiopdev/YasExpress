@@ -1,0 +1,37 @@
+<button class="alert alert-primary" data-bs-target="addContactModal" (click)="openTransaction()">Nouveau Transaction</button>
+<a class="alert alert-dismissable" href="#">retour accueil</a>
+<div class="container-fluid">
+    <em>LA LISTE DES TRANSACTIONS</em>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Numero Transaction</th>
+                <th scope="col">Date Compte</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let transaction of transactions">
+            <tr>
+                <th scope="row">{{transaction.id}}</th>
+                <td>{{transaction.numeroTransaction}}</td>
+                <td>{{transaction.dateTransaction}}</td>
+                <td>
+                    <span style="cursor: pointer" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+            </span>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item (click)="ModifierTransaction(transaction)">
+                    <mat-icon>edit</mat-icon>
+                    <span>Modifier</span>
+                </button>
+                        <button mat-menu-item (click)="deleteTransaction(transaction)">
+                    <mat-icon>delete</mat-icon>
+                    <span>Supprimer</span>
+                </button>
+
+                    </mat-menu>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

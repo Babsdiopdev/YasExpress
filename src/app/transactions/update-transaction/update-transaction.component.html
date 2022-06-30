@@ -1,0 +1,26 @@
+<section id="container">
+    <form #addForm="ngForm">
+        <div id="head" class="col-12 m-0 mb-3 p-0">
+            <legend>Modifier Transaction</legend>
+            <em class="pi pi-times" mat-dialog-close></em>
+        </div>
+        <div class="row">
+            {{data|json}}
+            <div class="col-md-12 col-sm-12">
+                <label class="col-12 p-0" for="numero">Numero Transaction</label>
+                <input class="col-12" type="text" [(ngModel)]="transaction.numeroTransaction" name="numeroTransaction" placeholder="Numero" id="nom" />
+            </div>
+
+            <div class="col-md-6 col-sm-12">
+                <label class="col-12 p-0" for="date">Date Transaction</label>
+                <input class="col-12" type="date" [(ngModel)]="transaction.dateTransaction" name="dateTransaction" placeholder="Date" pInputText />
+            </div>
+        </div>
+        <div>
+            <div class="pull-right mt-4">
+                <button type="button" id="addCompte" mat-button mat-dialog-close class="alert alert-danger ml-3">Annuler</button>
+                <button [disabled]="addForm.invalid" type="submit" class="alert alert-primary" [mat-dialog-close]="true" (click)="saveFormulaire()">Enrigistrer</button>
+            </div>
+        </div>
+    </form>
+</section>

@@ -1,0 +1,45 @@
+<button class="alert alert-primary" data-bs-target="addContactModal" (click)="openEntreprise()">Nouveau  Entreprise</button>
+<a class="alert alert-dismissable" href="#">retour accueil</a>
+
+<div class="container-fluid">
+    <em>LA LISTE DES ENTREPRISES</em>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Ninea</th>
+                <th scope="col">Adresse</th>
+                <th scope="col">Telephone</th>
+                <th scope="col">Email</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let entreprises of entreprises">
+            <tr>
+                <th scope="row">{{entreprises.id}}</th>
+                <td>{{entreprises.nom}}</td>
+                <td>{{entreprises.ninea}}</td>
+                <td>{{entreprises.adresse}}</td>
+                <td>{{entreprises.telephone}}</td>
+                <td>{{entreprises.email}}</td>
+
+                <td>
+                    <span style="cursor: pointer" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+            </span>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item (click)="ModifierEntreprise(entreprise)">
+                    <mat-icon>edit</mat-icon>
+                    <span>Modifier</span>
+                </button>
+                        <button mat-menu-item (click)="deleteEntreprise(entreprise)">
+                     <mat-icon>delete</mat-icon>
+                    <span>Supprimer</span>
+                 </button>
+
+                    </mat-menu>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

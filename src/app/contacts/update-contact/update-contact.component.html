@@ -1,0 +1,61 @@
+<section id="container" class="row">
+    <div id="head" class="col-12 m-0 mb-3 p-0">
+        <legend>Modifier contact</legend>
+        <em class="pi pi-times" mat-dialog-close></em>
+    </div>
+    <div class="row m-0 mt-4">
+        {{data|json}}
+        <div class="col-md-6 col-sm-12">
+            <label class="col-12 p-0" for="reference">Nom</label>
+            <input class="col-12" type="text" [(ngModel)]="contact.nom" placeholder="Nom" pInputText id="nom" />
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <label class="col-12 p-0" for="reference">Prénom</label>
+            <input class="col-12" type="text" [(ngModel)]="contact.prenom" placeholder="Prénom" pInputText />
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <label class="col-12 p-0" for="reference">Civilité</label>
+            <select aria-label="types entrepots" class="col-12" value="types entrepots">
+                   <option value=""></option>
+                   <option value="">Célibataire</option>
+                   <option value="">Marié</option>
+                </select>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <label class="col-12 p-0" for="reference">Téléphone</label>
+            <input class="col-12" type="text" [(ngModel)]="contact.telephone" placeholder="téléphone" pInputText />
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <label class="col-12 p-0" for="reference">Mobile</label>
+            <input class="col-12" type="text" [(ngModel)]="contact.mobile" placeholder="Mobile" pInputText />
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <label class="col-12 p-0" for="reference">Adresse contact</label>
+            <input class="col-12" type="text" [(ngModel)]="contact.adresse" placeholder="Adresse contact" pInputText />
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <label class="col-12 p-0" for="reference">Email</label>
+            <input class="col-12" type="text" [(ngModel)]="contact.email" placeholder="Email" pInputText />
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <label class="col-12 p-0" for="reference">Site</label>
+            <input class="col-12" type="text" [(ngModel)]="contact.site" placeholder="Site" pInputText />
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <label class="col-12 p-0" for="reference">Type</label>
+            <input class="col-12" type="text" [(ngModel)]="contact.type" placeholder="Type" pInputText />
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <label class="col-12 p-0" for="reference">Fonction</label>
+            <input class="col-12" type="text" [(ngModel)]="contact.fonction" placeholder="Fonction" pInputText />
+        </div>
+    </div>
+    <div>
+        <div class="pull-right mt-4">
+            <button mat-button mat-dialog-close class="btn btn-danger ml-2">Fermer</button>
+            <button mat-button [mat-dialog-close]="true" (click)="onModifContact(contact)" class="btn btn-primary">
+              Valider
+            </button>
+        </div>
+    </div>
+</section>

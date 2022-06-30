@@ -1,0 +1,63 @@
+<button class="alert alert-primary" (click)="openNew()" data-bs-target="addContactModal">Nouveau contact</button>
+<a class="alert alert-dismissable" href="#">retour accueil</a>
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container" id="main-container">
+
+    <div *ngFor="let contact of contacts">
+        <div class="col-md-4 col-xl-3">
+            <div class="card m-b-30">
+                <div class="card-body row">
+                    <div class="col-6">
+                        <a href="">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="" class="img-fluid rounded-circle w-60">
+                        </a>
+                    </div>
+                    <div class="col-6 card-title align-self-center mb-0">
+                        <h5>{{contact.nom}} {{contact.prenom}}</h5>
+                        <p class="m-0">{{contact.type}}</p>
+                    </div>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <i class="fa fa-users float-right"></i>Civilité : <a href="#">{{contact.civilite}}</a></li>
+                    <li class="list-group-item"><i class="fa fa-phone float-right"></i>Phone : {{contact.telephone}}</li>
+                    <li class="list-group-item"><i class="fa fa-address-book float-right"></i>Adresse : <a href="#">{{contact.adresse}}</a></li>
+                    <li class="list-group-item"><i class="fa fa-envelope float-right"></i>Email : <a href="#">{{contact.email}}</a></li>
+                </ul>
+                <div class="card-body">
+                    <div class="float-right btn-group btn-group-sm">
+                        <a class="btn btn-primary tooltips" (click)="ModifierContact(contact)" data-placement="top" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil"></i> </a>
+                        <a class="btn btn-secondary tooltips" data-placement="top" data-toggle="tooltip" (click)="deleteContact(contact)" data-original-title="Delete"><i class="fa fa-times"></i></a>
+                        <a class="btn btn-warning tooltips" data-placement="right" style="width:30px;height: 30px;padding:auto;">
+                            <span style="cursor: pointer; padding: auto;" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                            <mat-icon>more_vert</mat-icon>
+                            </span>
+                            <mat-menu #menu="matMenu">
+                                <button mat-menu-item (click)="listeComptes()">
+                                  <!--
+                                <mat-icon>edit</mat-icon>
+                                -->
+                                <span>listes comptes</span>
+                            </button>
+                                <button mat-menu-item>
+                                   <!--
+                                <mat-icon>delete</mat-icon>
+                              -->
+                                <span>listes entreprises</span>
+                            </button>
+
+                            </mat-menu>
+                        </a>
+                    </div>
+                    <ul class="social-links list-inline mb-0">
+                        <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Facebook"><i class="fa fa-facebook-f"></i></a></li>
+                        <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Skype"><i class="fa fa-skype"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

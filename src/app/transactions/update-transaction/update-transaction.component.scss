@@ -1,0 +1,12 @@
+#head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    legend {
+        font-size: 1.2em;
+        margin: 0;
+    }
+    em {
+        cursor: pointer;
+    }
+}

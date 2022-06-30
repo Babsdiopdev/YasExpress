@@ -1,0 +1,28 @@
+<section id="container">
+    <form #addForm="ngForm" (ngSubmit)="onAddCompte(addForm)">
+        <div id="head" class="col-12 m-0 mb-3 p-0">
+            <legend>Nouveau compte</legend>
+            <em class="pi pi-times" mat-dialog-close></em>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <label class="col-12 p-0" for="numero">Numero Compte</label>
+                <input class="col-12" type="text" ngModel name="numeroCompte" placeholder="Numero" id="nom" />
+            </div>
+            <div class="col-md-12 col-sm-12">
+                <label class="col-12 p-0" for="solde">Solde</label>
+                <input class="col-12" type="text" ngModel name="solde" placeholder="Solde" pInputText />
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <label class="col-12 p-0" for="date">Date</label>
+                <input class="col-12" type="date" ngModel name="dateCompte" placeholder="Date" pInputText />
+            </div>
+        </div>
+        <div>
+            <div class="pull-right mt-4">
+                <button type="button" id="addCompte" mat-button mat-dialog-close class="alert alert-danger ml-3">Annuler</button>
+                <button [disabled]="addForm.invalid" type="submit" class="alert alert-primary">Enrigistrer</button>
+            </div>
+        </div>
+    </form>
+</section>

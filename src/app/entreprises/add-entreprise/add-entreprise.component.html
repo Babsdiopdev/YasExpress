@@ -1,0 +1,37 @@
+<section id="container">
+
+    <form #addForm="ngForm" (ngSubmit)="onAddTransaction(addForm)">
+        <div id="head" class="col-12 m-0 mb-3 p-0">
+            <legend>Nouveau Entreprise</legend>
+            <em class="pi pi-times" mat-dialog-close></em>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <label class="col-12 p-0" for="nom">Nom</label>
+                <input class="col-12" type="text" ngModel name="nom" placeholder="Nom" />
+            </div>
+            <div class="col-md-12 col-sm-12">
+                <label class="col-12 p-0" for="ninea">Ninéa</label>
+                <input class="col-12" type="text" ngModel name="ninéa" placeholder="Ninéa" />
+            </div>
+            <div class="col-md-12 col-sm-12">
+                <label class="col-12 p-0" for="adresse">Adresse</label>
+                <input class="col-12" type="text" ngModel name="adresse" placeholder="Adresse" />
+            </div>
+            <div class="col-md-12 col-sm-12">
+                <label class="col-12 p-0" for="telephone">Téléphone</label>
+                <input class="col-12" type="text" ngModel name="telephone" placeholder="Telephone" />
+            </div>
+            <div class="col-md-12 col-sm-12">
+                <label class="col-12 p-0" for="email">Email</label>
+                <input class="col-12" type="text" ngModel name="email" placeholder="email" />
+            </div>
+        </div>
+        <div>
+            <div class="pull-right mt-4">
+                <button type="button" id="addCompte" mat-button mat-dialog-close class="alert alert-danger ml-3">Annuler</button>
+                <button [disabled]="addForm.invalid" type="submit" class="alert alert-primary">Enrigistrer</button>
+            </div>
+        </div>
+    </form>
+</section>

@@ -1,0 +1,23 @@
+<em id="ferme" class="pi pi-times" mat-dialog-close></em>
+<div class="container-fluid">
+    <span *ngFor="let contact of contact">
+    <em>LA LISTE DES COMPTES {{contact.nom}} {{contact.prenom}}</em>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Numero Compte</th>
+                <th scope="col">Solde Compte</th>
+                <th scope="col">Date Compte</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let compte of comptes">
+            <tr>
+                <td>{{compte.numeroCompte}}</td>
+                <td>{{compte.solde}}</td>
+                <td>{{compte.dateCompte}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+  </span>
+</div>
